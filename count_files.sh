@@ -12,10 +12,8 @@ if [ -d "$dossier" ]; then
             echo "$item"
         fi
     done | wc -l)
-
+    # Affiche le nombre de fichier  
     echo "Le dossier $dossier contient $nb_fichiers fichier(s)."
 else
     echo "Le dossier $dossier n'existe pas."
-fi
-
- 
+fi 
