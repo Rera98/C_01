@@ -1,17 +1,21 @@
-#!/bin/bash 
-# Demander à l'utilisateur de saisir un nom de dossier
-echo "Veuillez entrer le nom d'un dossier :"
+#!/bin/bash
+
+# Demander le nom du dossier à l'utilisateur
+echo "Entrez le nom du dossier :"
 read dossier
 
-# Vérifier que le dossier existe
-if [ ! -d "$dossier" ]; then
-    echo "Erreur : le dossier '$dossier' n'existe pas."
-    exit 1
+# Vérifie si le dossier existe
+if [ -d "$dossier" ]; then
+    # Utilise ls pour lister les éléments visibles, puis trouve ceux qui sont des fichiers
+    nb_fichiers=$(ls "$dossier" | while read item; do
+        if [ -f "$dossier/$item" ]; then
+            echo "$item"
+        fi
+    done | wc -l)
+
+    echo "Le dossier $dossier contient $nb_fichiers fichier(s)."
+else
+    echo "Le dossier '$dossier' n'existe pas."
 fi
-    # Utiliser ls et wc -l pour compter les fichiers (non récursif)
-    # On filtre avec 'ls -p' qui ajoute un '/' aux dossiers
-    # Puis on enlève les lignes qui se terminent par '/' (donc les dossiers)
-  nb_fichiers=$( ls -p "$dossier" | grep -v '/$'| wc -l)
-    # Afficher le résultat
-  echo "Le dossier $dossier contient $nb_fichiers fichier(s)."
+
  
