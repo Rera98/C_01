@@ -7,7 +7,7 @@ read dossier
 # Vérifie si le dossier existe
 
 if [ -d "$dossier" ]; then 
-    nb_fichiers=$(ls $dossier | wc -l | xargs)
+    nb_fichiers=$(find "$dossier" -maxdepth 1 -type f | wc -l | xargs)
     echo "Le dossier $dossier contient $nb_fichiers fichier(s)."
 else
     echo "Le dossier $dossier n'existe pas."
