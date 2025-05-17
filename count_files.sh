@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Demander le nom du dossier à l'utilisateur
-echo "Entrez le nom du dossier:"
+echo "Entrez le nom du dossier : "
 read dossier
 
 # Vérifie si le dossier existe
