@@ -7,7 +7,7 @@ read filename
 # Vérifie si le dossier existe
 
 if [ -d "$filename" ]; then 
-    nb_fichiers=$(ls "$filename"| wc -l |xargs)
+    nb_fichiers=$(ls "$filename" | wc -l |xargs)
 
     echo "Le dossier $filename contient $nb_fichiers fichier(s)."
 else
