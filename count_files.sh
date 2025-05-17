@@ -2,13 +2,14 @@
 
 # Demander le nom du dossier à l'utilisateur
 echo "Entrez le nom du dossier :"
-read dossier
+read filename
 
 # Vérifie si le dossier existe
 
-if [ -d "$dossier" ]; then 
-    nb_fichiers=$(ls "$dossier" | wc -l | xargs)
-    echo "Le dossier $dossier contient $nb_fichiers fichier(s). "
+if [ -d "$filename" ]; then 
+    nb_fichiers=$(ls "$filename" | wc -l | xargs)
+    
+    echo "Le dossier $filename contient $nb_fichiers fichier(s)."
 else
-    echo "Le dossier $dossier n'existe pas. "
+    echo "Le dossier $filename n'existe pas."
 fi 
