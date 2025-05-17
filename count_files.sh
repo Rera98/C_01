@@ -9,7 +9,7 @@ read filename
 if [ -d "$filename" ]; then 
     nb_fichiers=$(ls "$filename"| wc -l|xargs)
 
-    echo "Le dossier $filename contient $nb_fichiers fichier(s)."
+    echo "Le dossier '$filename' contient $nb_fichiers fichier(s)."
 else
-    echo "Le dossier $filename n'existe pas."
+    echo "Le dossier '$filename' n'existe pas."
 fi 
