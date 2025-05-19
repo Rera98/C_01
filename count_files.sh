@@ -1,8 +1,6 @@
 #!/bin/bash 
 # Demande le nom du dossier à l'utilisateur 
-
-read dossier
-
+ 
 # Vérifie si le dossier existe
 
 if [ -d "$dossier" ]; then
