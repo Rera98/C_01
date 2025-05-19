@@ -11,7 +11,7 @@ if [ ! -f "$fichier" ]; then
 fi
 
 # Demander la chaîne à rechercher
-#echo "Entrez la chaîne à rechercher :"
+echo "Entrez la chaîne à rechercher :"
 read chaine
 
 # Utiliser grep pour chercher la chaîne dans le fichier
