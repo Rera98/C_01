@@ -1,12 +1,7 @@
 #!/bin/bash 
 # Demande le nom du dossier à l'utilisateur 
- read dossier
-# Vérifie si le dossier existe
+ read myfolder
 
-if [ -d "$dossier" ]; then
-    nb_fichiers=$(ls "$dossier" | wc -l | xargs)
+ count=$(ls -1 "$myfolder" | wc -l)
 
-    echo "Le dossier $dossier contient $nb_fichiers fichier(s)."
-else
-    echo "Le dossier $dossier n'existe pas."
-fi 
+ echo "Le dossier $myfolder contient $count fichier(s)."
