@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Affiche tous les arguments en une seule fois
-for arg in "$@"; do
-    echo -n "$arg "
-done
+#for arg in "$@"; do
+    echo "$@"
+#done
 
 # Traitement individuel avec \$1 et shift
 i=1
