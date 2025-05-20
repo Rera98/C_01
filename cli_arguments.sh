@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# Affiche tous les arguments en une seule fois
-echo "$@" 
-# Traitement individuel avec \$1 et shift
-i=1 
-# Boucle sur les arguments et les affiches un a un
- for arg in "$@"; do
-    echo "Argument $i: $arg"
-    ((i++))
-done
+echo "$@"
+
+i=1
+set -- "$@"  # Réinitialise les arguments positionnels (pas obligatoire ici, mais bon à connaître)
+
+# Lecture manuelle sans boucle visible
+next() {
+    [ "$1" ] && echo "Argument $i: $1" && shift && ((i++)) && next "$@"
+}
+
+next "$@"
