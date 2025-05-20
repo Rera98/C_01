@@ -12,8 +12,9 @@
 #done
 echo "$@"
 
-#i=1
-
-echo "Argument 1: $1"; shift #&& ((i++))
-echo "Argument 2: $1"; shift #&& ((i++))
-#[ "$1" ] && echo "Argument $i: $1" && shift && ((i++))
+i=1
+for arg in "$@"; do
+  echo "Argument $i: $arg"
+  shift 
+  ((i++))
+done  
