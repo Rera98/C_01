@@ -14,6 +14,6 @@ echo "$@"
 
 #i=1
 
-[ "$1" ] && echo "Argument $1: $1" && shift #&& ((i++))
-[ "$1" ] && echo "Argument $2: $1" && shift #&& ((i++))
+[ "$1" ] && echo "Argument 1: $1" && shift #&& ((i++))
+[ "$1" ] && echo "Argument 2: $1" && shift #&& ((i++))
 #[ "$1" ] && echo "Argument $i: $1" && shift && ((i++))
